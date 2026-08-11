@@ -217,6 +217,57 @@ int main()
 
 // complex operator oveload 
 
+class Complex
+{
+private:
+    float real;
+    float img;
+
+public:
+
+    Complex()
+    {
+        real = 0;
+        img = 0;
+    }
+
+    Complex(float r, float i)
+    {
+        real = r;
+        img = i;
+    }
+
+    Complex operator+(Complex c)
+    {
+        Complex b;
+
+        b.real = real + c.real;
+        b.img = img + c.img;
+
+        return b;
+    }
+
+    void print()
+    {
+        cout << real << " + " << img << "i" << endl;
+    }
+};
+
+int main()
+{
+    Complex c1(10, 3);
+    Complex c2(5, 2);
+
+    Complex c3;
+
+    c3 = c1 + c2;
+
+    c3.print();
+
+    return 0;
+}
+
+/*******************************/
 
 
 
