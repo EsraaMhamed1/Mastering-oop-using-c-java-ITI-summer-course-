@@ -50,6 +50,7 @@ int main()
 }
 
 
+// dynamic allocation 
 class Complex
 {
 private:
