@@ -103,49 +103,44 @@ int main()
 
 // classes relations 
 //1. Association 
-
 class Course
 {
 public:
-    Course()
-    {
-        cout << "Course created\n";
-    }
+    string name;
 
-    void showCourse()
+    Course(string n)
     {
-        cout << "This is a Course\n";
+        name = n;
     }
 };
 
 class Seminar
 {
 private:
-    Course* c;   // Association
+    Course* c; // association
 
 public:
-    Seminar()
-    {
-        c = nullptr;
-    }
-
     void offer(Course* course)
     {
         c = course;
-        cout << "Seminar is offering a Course\n";
+
+        cout << "Seminar is offering: "
+            << c->name << endl;
     }
 };
 
 int main()
 {
-    Course c1;
+    Course oop("OOP using C++");
 
     Seminar s1;
 
-    s1.offer(&c1);
+    s1.offer(&oop);
 
     return 0;
 }
+
+
 
 
 
