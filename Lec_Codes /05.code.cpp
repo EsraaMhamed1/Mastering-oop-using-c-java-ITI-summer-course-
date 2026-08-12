@@ -101,5 +101,54 @@ int main()
 }
 
 
+// classes relations 
+//1. Association 
+
+class Course
+{
+public:
+    Course()
+    {
+        cout << "Course created\n";
+    }
+
+    void showCourse()
+    {
+        cout << "This is a Course\n";
+    }
+};
+
+class Seminar
+{
+private:
+    Course* c;   // Association
+
+public:
+    Seminar()
+    {
+        c = nullptr;
+    }
+
+    void offer(Course* course)
+    {
+        c = course;
+        cout << "Seminar is offering a Course\n";
+    }
+};
+
+int main()
+{
+    Course c1;
+
+    Seminar s1;
+
+    s1.offer(&c1);
+
+    return 0;
+}
+
+
+
+
 
 
