@@ -257,3 +257,52 @@ int main()
     return 0;
 }
 
+/*****************************************/
+
+// polymorphism (override) 
+
+class Base
+{
+public:
+    void basePublicMember()
+    {
+        cout << "Base Member" << endl;
+    }
+};
+
+class Derived : public Base
+{
+public:
+    void derivedPublicMember()
+    {
+        cout << "Derived Member" << endl;
+    }
+};
+
+void someFunction(Base t)
+{
+    t.basePublicMember();
+}
+
+void anotherFunction(Derived t)
+{
+    t.derivedPublicMember();
+}
+
+int main()
+{
+    Base b;
+    Derived d;
+
+    someFunction(b);   // ✅ Base object
+    someFunction(d);   // ✅ Derived object
+
+    cout << "****************" << endl;
+
+    anotherFunction(d);   // ✅ Derived object
+
+    // anotherFunction(b);   // ❌ Error
+    // Base cannot be sent to a function that expects Derived
+
+    return 0;
+}
