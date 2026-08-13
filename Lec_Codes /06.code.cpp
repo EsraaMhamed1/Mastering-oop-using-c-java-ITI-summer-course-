@@ -33,3 +33,43 @@ int main() {
 	return 0; 
 }
 
+/************************************/
+
+class Animal
+{
+private:
+	int age;
+
+protected:
+	int weight;
+
+public:
+	void eat() {
+		cout << "Eating..." << endl; 
+
+	};
+};
+
+class Dog : public Animal {
+public:
+	void setWeight(int w) {
+		weight = w;      // ✅ Dog يقدر يوصل
+		cout << w << endl; 
+	}
+	void bark() {
+		cout << "Bark" << endl;
+	};
+};
+
+
+int main() {
+	Dog d;
+	
+	cout << "dog weight : "  ;
+	d.setWeight(40); 
+
+	d.bark();
+	d.eat();
+
+	return 0;
+}
