@@ -203,3 +203,57 @@ int main()
 
     return 0;
 }
+
+/************************************/
+// access modyfires 
+
+class Base
+{
+private:
+    int a;
+
+protected:
+    int b;
+
+public:
+    int c;
+
+    void setValues()
+    {
+        a = 10;
+        b = 20;
+        c = 30;
+    }
+};
+
+class Derived : public Base
+{
+public:
+    void show()
+    {
+        // a = 5;   
+
+        b = 50;     
+        c = 60;     
+
+        cout << "b = " << b << endl;
+        cout << "c = " << c << endl;
+    }
+};
+
+int main()
+{
+    Derived d;
+
+    d.show();
+
+    // d.a = 1;   // ❌ private
+    // d.b = 2;   // ❌ protected
+
+    d.c = 3;       // ✅ public
+
+    cout << "c from main = " << d.c << endl;
+
+    return 0;
+}
+
