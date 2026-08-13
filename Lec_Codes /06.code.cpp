@@ -306,3 +306,89 @@ int main()
 
     return 0;
 }
+
+/************************************************************/
+// multi level inheritance
+class Base
+{
+protected:
+    int a;
+
+public:
+    Base()
+    {
+        a = 10;
+    }
+
+    void setA(int x)
+    {
+        a = x;
+    }
+
+    int getA()
+    {
+        return a;
+    }
+};
+
+class Derived : public Base
+{
+protected:
+    int b;
+
+public:
+    Derived() : Base()
+    {
+        b = 20;
+    }
+
+    void setB(int x)
+    {
+        b = x;
+    }
+
+    int getB()
+    {
+        return b;
+    }
+};
+
+class SecondDerived : public Derived
+{
+private:
+    int c;
+
+public:
+    SecondDerived() : Derived()
+    {
+        c = 30;
+    }
+
+    void setC(int x)
+    {
+        c = x;
+    }
+
+    int getC()
+    {
+        return c;
+    }
+
+    int product()
+    {
+        return a * b * c;
+    }
+};
+
+int main()
+{
+    SecondDerived obj;
+
+    cout << "a = " << obj.getA() << endl;
+    cout << "b = " << obj.getB() << endl;
+    cout << "c = " << obj.getC() << endl;
+
+    cout << "Product = " << obj.product() << endl;
+
+    return 0;
+}
