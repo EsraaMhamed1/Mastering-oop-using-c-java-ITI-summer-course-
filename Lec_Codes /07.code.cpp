@@ -292,5 +292,71 @@ int main()
 }
 
 
+// problem in multible inheritance 2 : 
+class Base
+{
+protected:
+    int a;
+
+public:
+    Base(int x)
+    {
+        a = x;
+    }
+};
+
+class Base1 : public Base
+{
+protected:
+    int b;
+
+public:
+    Base1(int x, int y)
+        : Base(x)
+    {
+        b = y;
+    }
+};
+
+class Base2 : public Base
+{
+protected:
+    int c;
+
+public:
+    Base2(int x, int z)
+        : Base(x)
+    {
+        c = z;
+    }
+};
+
+class Derived : public Base1, public Base2
+{
+private:
+    int d;
+
+public:
+    Derived(int x, int y, int z, int w)
+        : Base1(x, y), Base2(x, z)
+    {
+        d = w;
+    }
+
+    int product()
+    {
+        return a * b * c * d;   // ❌ Ambiguous
+    }
+};
+
+int main()
+{
+    Derived d(2, 3, 4, 5);
+
+    cout << d.product() << endl;
+
+    return 0;
+}
+
 
 
