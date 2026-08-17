@@ -382,3 +382,95 @@ int main()
     return 0;
 }
 
+// template class 
+template <class T>
+class Stack
+{
+private:
+    T* st;
+    int size;
+    int top;
+
+public:
+
+    Stack(int s)
+    {
+        size = s;
+        top = 0;
+        st = new T[size];
+    }
+
+    ~Stack()
+    {
+        delete[] st;
+    }
+
+    void push(T value)
+    {
+        if (top < size)
+        {
+            st[top] = value;
+            top++;
+        }
+        else
+        {
+            cout << "Stack is full!" << endl;
+        }
+    }
+
+    T pop()
+    {
+        if (top > 0)
+        {
+            top--;
+            return st[top];
+        }
+        else
+        {
+            cout << "Stack is empty!" << endl;
+            return T();
+        }
+    }
+};
+
+int main()
+{
+    // Stack of integers
+    Stack<int> s1(5);
+
+    s1.push(10);
+    s1.push(3);
+    s1.push(2);
+
+    cout << "Integer Stack:" << endl;
+
+    cout << s1.pop() << endl;
+    cout << s1.pop() << endl;
+
+
+    // Stack of characters
+    Stack<char> s2(5);
+
+    s2.push('a');
+    s2.push('r');
+    s2.push('s');
+
+    cout << "\nCharacter Stack:" << endl;
+
+    cout << s2.pop() << endl;
+    cout << s2.pop() << endl;
+
+
+    // Stack of double
+    Stack<double> s3(5);
+
+    s3.push(10.5);
+    s3.push(20.7);
+
+    cout << "\nDouble Stack:" << endl;
+
+    cout << s3.pop() << endl;
+    cout << s3.pop() << endl;
+
+    return 0;
+}
