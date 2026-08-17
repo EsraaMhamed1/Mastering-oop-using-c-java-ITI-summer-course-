@@ -1,298 +1,373 @@
 #include <iostream>
 using namespace std; 
 
-// inheritanc types 
-// 1. public : 
+// Types of inhertiance : 
+// 1 . public: 
 
-class Base
-{
+class Base {
 public:
     int a;
-
 protected:
     int b;
-
 private:
     int c;
-};
+}; 
 
-class Derived : public Base
-{
-public:
-    void show()
-    {
-        a = 10;   // Allowed
-        b = 20;   // Allowed
-        // c = 30;   // NOT Allowed
+class Derived : public Base {
+public : 
+    void show() {
+        a = 10;
+        b = 20;
+      
+        
+        cout << "a = " << a << endl; 
+        cout << "b = " << b << endl; 
 
-        cout << "a = " << a << endl;
-        cout << "b = " << b << endl;
     }
 };
 
-int main()
-{
-    Derived obj;
+int main() {
+    Derived obj; 
 
-    obj.a = 100;   // Allowed because a is public
-    cout << obj.a << endl; 
+    obj.a = 100;
 
-
-    // obj.b = 200;  // NOT Allowed because b is protected
-    // obj.c = 300;  // NOT Allowed because c is private
 
     obj.show();
 
-    return 0;
-}
-
-
-//2. Protected :
-
-class Base
-{
-public:
-    int a;
-
-protected:
-    int b;
-
-private:
-    int c;
-};
-
-class Derived : protected Base
-{
-public:
-    void show()
-    {
-        a = 10;   // Allowed
-        b = 20;   // Allowed
-        // c = 30;   // NOT Allowed
-
-        cout << "a = " << a << endl;
-        cout << "b = " << b << endl;
-    }
-};
-
-int main()
-{
-    Derived obj;
-
-    // obj.a = 100;  // NOT Allowed
-    // obj.b = 200;  // NOT Allowed
-    // obj.c = 300;  // NOT Allowed
-
-    obj.show();
-
-    return 0;
+    return 0; 
 }
 
 
 
+// 2. protected : 
 
-//3. private : 
-class Base
-{
-public:
-    int a;
-
-protected:
-    int b;
-
-private:
+class Base {
+public : 
+    int a; 
+protected : 
+    int b; 
+private : 
     int c;
 };
 
-class Derived : private Base
-{
-public:
-    void show()
-    {
-        a = 10;   // Allowed
-        b = 20;   // Allowed
-        // c = 30;   // NOT Allowed
+class Derived : protected Base {
+public : 
+    void doSomething(){
+        a = 10; 
+        b = 20; 
+        //c = 20;  
 
-        cout << "a = " << a << endl;
-        cout << "b = " << b << endl;
+        cout << "a = " << a << endl; 
+        cout << "b = " << b << endl; 
+
     }
 };
 
-int main()
-{
-    Derived obj;
 
-    // obj.a = 100;  // NOT Allowed
-    // obj.b = 200;  // NOT Allowed
-    // obj.c = 300;  // NOT Allowed
+int main() {
+    Derived obj; 
 
+    obj.doSomething();
+
+    return 0; 
+}
+
+
+// 3. private : 
+
+class Base {
+public : 
+    int a; 
+protected : 
+    int b; 
+private: 
+    int c;
+};
+
+class Derived : private Base {
+
+public : 
+    void show() {
+        a = 10; 
+        b = 20; 
+
+        cout << "a = " << a << endl; 
+        cout << "b  = " << b << endl; 
+
+    }
+};
+
+int main() {
+    Derived obj; 
     obj.show();
 
-    return 0;
+    return 0; 
+
 }
 
 
 
-//Example 
-class GeoShape
-{
+// Example :
+
+class GeoShape {
 protected:
     float dim1;
-    float dim2;
+    float dim2; 
 
-public:
-
-    GeoShape()
-    {
+public: 
+    GeoShape() {
         dim1 = dim2 = 0;
     }
 
-    GeoShape(float x)
-    {
-        dim1 = dim2 = x;
+    GeoShape(float x) {
+        dim1 = dim2 = x; 
     }
 
-    GeoShape(float x, float y)
-    {
-        dim1 = x;
+    GeoShape(float x, float y) {
+        dim1 = x; 
+        dim2 = y; 
+    }
+
+    void setDim1(float  x) {
+        dim1 = x; 
+    }
+
+    void setDim2(float y) {
         dim2 = y;
     }
 
-    void setDim1(float x)
-    {
-        dim1 = x;
-    }
-
-    void setDim2(float x)
-    {
-        dim2 = x;
-    }
-
-    float getDim1()
-    {
+    float getDim1() {
         return dim1;
     }
 
-    float getDim2()
-    {
+    float getDim2() {
         return dim2;
     }
 
-    float calculateArea()
-    {
-        return 0;
+    float calcArea() {
+        return 0; 
+    }
+};
+
+class Triangle : public GeoShape {
+public :
+    Triangle (float b , float h): GeoShape(b,h){
+    }
+
+    float calcArea() {
+        return 0.5 * dim1 * dim2; 
+    }
+};
+
+class Rect : public GeoShape {
+public : 
+    Rect(float x, float y) : GeoShape(x, y) {
+
+    }
+
+    float calcArea() {
+        return dim1 * dim2; 
+    }
+};
+
+class Circle : private GeoShape {
+public : 
+    Circle(float r) : GeoShape(r) {
+
+    }
+
+    float calcArea() {
+        return 22.0 / 7 * dim1 * dim2; 
+    }
+};
+
+class Square : private Rect {
+public: 
+    Square(float side) : Rect(side, side) {
+
+    }
+    void setSquareDim(float x) {
+        dim1 = dim2 = x; 
+    }
+
+    float getSquareDim() {
+        return dim1; 
+    }
+
+    float calcArea() {
+        return Rect::calcArea(); 
     }
 };
 
 
-// ================= Triangle =================
+int main() {
+    Triangle t(10, 20); 
+    cout << "Triangle Area = " << t.calcArea() << endl; 
 
-class Triangle : public GeoShape
-{
-public:
+    Rect r(10, 20); 
+    cout << "Rect Area = " << r.calcArea() << endl; 
 
-    Triangle(float b, float h) : GeoShape(b, h)
-    {
-    }
-
-    float calculateArea()
-    {
-        return 0.5 * dim1 * dim2;
-    }
-};
-
-
-// ================= Rectangle =================
-
-class Rect : public GeoShape
-{
-public:
-
-    Rect(float x, float y) : GeoShape(x, y)
-    {
-    }
-
-    float calculateArea()
-    {
-        return dim1 * dim2;
-    }
-};
-
-// ================= Circle =================
-class Circle : private GeoShape
-{
-public:
-
-    Circle(float r) : GeoShape(r)
-    {
-    }
-
-    void setRadius(float r)
-    {
-        dim1 = dim2 = r;
-    }
-
-    float getRadius()
-    {
-        return dim1;
-    }
-
-    float calculateArea()
-    {
-        return 22.0 / 7 * dim1 * dim2;
-    }
-};
-// ================= Square =================
-
-class Square : private Rect
-{
-public:
-
-    Square(float side) : Rect(side, side)
-    {
-    }
-
-    void setSquareDim(float x)
-    {
-        dim1 = dim2 = x;
-    }
-
-    float getSquareDim()
-    {
-        return dim1;
-    }
-
-    float calculateArea()
-    {
-        return Rect::calculateArea();
-    }
-};
-
-
-int main()
-{
-    Triangle t(10, 20);
-    Rect r(10, 20);
     Circle c(5);
-    Square s(5);
+    cout << "Circle Area = " << c.calcArea() << endl; 
 
-    cout << "Triangle Area = "
-        << t.calculateArea() << endl;
+    Square s(4); 
+    cout << "Square Area = " << s.calcArea() << endl; 
 
-    cout << "Rectangle Area = "
-        << r.calculateArea() << endl;
+    return 0;
+ }
 
-    cout << "Circle Area = "
-        << c.calculateArea() << endl;
 
-    cout << "Square Area = "
-        << s.calculateArea() << endl;
+
+// Multible inheritance  :
+
+class Base1 {
+protected :
+    int a; 
+
+public: 
+    Base1 (int x ){
+        a = x; 
+    }
+};
+
+class Base2 {
+protected: 
+    int b; 
+
+public:
+    Base2(int y) {
+        b = y; 
+    }
+};
+
+class Derived : public Base1, public Base2 {
+private : 
+    int c; 
+
+public:
+    Derived(int x, int y, int z) : Base1(x), Base2(y) {
+        c = z; 
+    }
+
+    void show() {
+        cout << "a = " << a << endl; 
+        cout << "b = " << b << endl; 
+        cout << "c = " << c << endl; 
+    }
+};
+
+int main() {
+    Derived d(10, 20, 30); 
+
+    d.show(); 
+
 
     return 0;
 }
 
 
-// problem in multible inheritance 2 : 
+
+// problem in multible inheritance : 
+// 1 .  
+
+class Base1 {
+protected:
+    int a;
+
+public:
+    Base1(int x) {
+        a = x;
+    }
+};
+
+class Base2 {
+protected:
+    int a;
+
+public:
+    Base2(int y) {
+        a = y;
+    }
+};
+
+class Derived : public Base1, public Base2 {
+    int c; 
+public : 
+    Derived(int x, int y, int z) : Base1(x), Base2(y) {
+
+    }
+
+    int product() {
+        return Base1::a * Base2::a * c; 
+    }
+};
+
+int main() {
+    Derived d(10, 20, 3);
+
+    cout << d.product(); 
+
+
+    return 0; 
+}
+
+
+// 2. 
+
+class Base {
+protected : 
+    int a; 
+
+public:
+    Base(int x) {
+        a = x; 
+    }
+};
+
+class Base1:virtual public Base {
+protected:
+    int b;
+
+public:
+    Base1(int x,int y):Base(x) {
+        b = x;
+    }
+};
+
+class Base2 : virtual public Base {
+protected:
+    int c;
+
+public:
+    Base2(int x, int z) :Base(x){
+        c = z;
+    }
+};
+
+class Derived : public Base1, public Base2 {
+private:
+    int d; 
+
+public:
+    Derived(int x, int y, int z, int w) :Base(x), Base1(x, y), Base2(x, z) {
+        d = w;
+    }
+
+      int product() {
+          return a * b * c * d; 
+      }
+};
+
+int main() {
+    Derived d(2, 3, 4, 5);
+
+    cout << d.product() << endl; 
+
+    return 0;
+}
+
+
+// problem in multible inheritance 2 :
 class Base
 {
 protected:
@@ -357,6 +432,5 @@ int main()
 
     return 0;
 }
-
 
 
