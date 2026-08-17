@@ -187,3 +187,112 @@ int main()
 
     return 0;
 }
+
+// V-table
+// calcArea
+class GeoShape
+{
+public:
+    virtual float calculateArea()
+    {
+        return 0;
+    }
+};
+
+class Triangle : public GeoShape
+{
+private:
+    float base;
+    float height;
+
+public:
+    Triangle(float b, float h)
+    {
+        base = b;
+        height = h;
+    }
+
+    float calculateArea() override
+    {
+        return 0.5 * base * height;
+    }
+};
+
+class Rect : public GeoShape
+{
+protected:
+    float length;
+    float width;
+
+public:
+    Rect(float l, float w)
+    {
+        length = l;
+        width = w;
+    }
+
+    float calculateArea() override
+    {
+        return length * width;
+    }
+};
+
+class Square : public Rect
+{
+public:
+    Square(float side) : Rect(side, side)
+    {
+    }
+
+    float calculateArea() override
+    {
+        return length * width;
+    }
+};
+
+class Circle : public GeoShape
+{
+private:
+    float radius;
+
+public:
+    Circle(float r)
+    {
+        radius = r;
+    }
+
+    float calculateArea() override
+    {
+        return 3.14 * radius * radius;
+    }
+};
+
+int main()
+{
+    GeoShape* p;
+
+    Circle c(10);
+    Rect r(30, 40);
+    Triangle t(100, 150);
+    Square s(60);
+
+    // Circle
+    p = &c;
+    cout << "Circle Area = " << p->calculateArea() << endl;
+
+    // Rectangle
+    p = &r;
+    cout << "Rectangle Area = " << p->calculateArea() << endl;
+
+    // Triangle
+    p = &t;
+    cout << "Triangle Area = " << p->calculateArea() << endl;
+
+    // Square
+    p = &s;
+    cout << "Square Area = " << p->calculateArea() << endl;
+
+    return 0;
+}
+
+
