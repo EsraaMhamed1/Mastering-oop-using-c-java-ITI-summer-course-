@@ -55,8 +55,8 @@ int main()
 }
 
 
-// 
-
+// Dynamic Binding  :
+// case 1 : 
 class Base
 {
 public:
@@ -84,3 +84,4 @@ int main()
 
     return 0;
 }
+
