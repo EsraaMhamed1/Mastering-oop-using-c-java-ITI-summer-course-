@@ -296,3 +296,89 @@ int main()
 }
 
 
+
+//calcSum : 
+class GeoShape
+{
+public:
+    virtual float calculateArea()
+    {
+        return 0;
+    }
+};
+
+class Triangle : public GeoShape
+{
+private:
+    float base;
+    float height;
+
+public:
+    Triangle(float b, float h)
+    {
+        base = b;
+        height = h;
+    }
+
+    float calculateArea() override
+    {
+        return 0.5 * base * height;
+    }
+};
+
+class Rect : public GeoShape
+{
+protected:
+    float length;
+    float width;
+
+public:
+    Rect(float l, float w)
+    {
+        length = l;
+        width = w;
+    }
+
+    float calculateArea() override
+    {
+        return length * width;
+    }
+};
+
+class Circle : public GeoShape
+{
+private:
+    float radius;
+
+public:
+    Circle(float r)
+    {
+        radius = r;
+    }
+
+    float calculateArea() override
+    {
+        return 3.14 * radius * radius;
+    }
+};
+
+float sumAreas(GeoShape* p1, GeoShape* p2, GeoShape* p3)
+{
+    return p1->calculateArea()
+        + p2->calculateArea()
+        + p3->calculateArea();
+}
+
+int main()
+{
+    Triangle myT(20, 10);
+    Rect myR(2, 5);
+    Circle myC(5);
+
+    cout << "Total Area = "
+        << sumAreas(&myT, &myR, &myC)
+        << endl;
+
+    return 0;
+}
+
