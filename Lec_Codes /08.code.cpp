@@ -53,3 +53,34 @@ int main()
 
     return 0;
 }
+
+
+// 
+
+class Base
+{
+public:
+    virtual void m1()
+    {
+        cout << "Base::m1()" << endl;
+    }
+
+    void m2()
+    {
+        cout << "Base::m2()" << endl;
+    }
+};
+
+int main()
+{
+    Base o1;
+
+    Base* ptr;
+
+    ptr = &o1;
+
+    ptr->m1();
+    ptr->m2();
+
+    return 0;
+}
