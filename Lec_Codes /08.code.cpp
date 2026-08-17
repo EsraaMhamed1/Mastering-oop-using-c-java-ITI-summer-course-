@@ -131,3 +131,59 @@ int main()
 
 
 
+// Case 4 : 
+class Base
+{
+public:
+    virtual void m1()
+    {
+        cout << "Base::m1()" << endl;
+    }
+
+    void m2()
+    {
+        cout << "Base::m2()" << endl;
+    }
+};
+
+class Derived : public Base
+{
+public:
+    void m1() override
+    {
+        cout << "Derived::m1()" << endl;
+    }
+
+    void m2()
+    {
+        cout << "Derived::m2()" << endl;
+    }
+};
+
+class Second : public Derived
+{
+public:
+    void m1() override
+    {
+        cout << "Second::m1()" << endl;
+    }
+
+    void m2()
+    {
+        cout << "Second::m2()" << endl;
+    }
+};
+
+int main()
+{
+    Second o3;
+
+    Derived* ptr;
+
+    ptr = &o3;
+
+    ptr->m1();
+    ptr->m2();
+
+    return 0;
+}
