@@ -106,6 +106,14 @@ public class lec_3_prep {
 
         System.out.println(x);
         System.out.println(y);
+              
+//promotion
+        byte a = 10;
+        byte b = 20;
+
+        int result = a + b;
+
+        System.out.println(result);
    
     }
     
