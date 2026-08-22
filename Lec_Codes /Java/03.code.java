@@ -130,7 +130,20 @@ public class lec_3_prep {
         numbers[1] = 100;
         System.out.println(numbers[1]);
               
+// array using new 
+        int[] numbers = new int[5];
 
+        numbers[0] = 10;
+        numbers[1] = 20;
+        numbers[2] = 30;
+
+        System.out.println(numbers[0]);
+        System.out.println(numbers[1]);
+        System.out.println(numbers[2]);
+        System.out.println(numbers[3]);
+        System.out.println(numbers[4]);
+
+              
               
     }
     
