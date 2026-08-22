@@ -142,7 +142,15 @@ public class lec_3_prep {
         System.out.println(numbers[2]);
         System.out.println(numbers[3]);
         System.out.println(numbers[4]);
+              
+// array with for loop 
+        int[] numbers = {10, 20, 30, 40, 50};
 
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
+        }
+
+              
               
               
     }
