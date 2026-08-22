@@ -88,7 +88,25 @@ public class lec_3_prep {
         }
 
         System.out.println("x is " + x);
-      
+
+
+         /*************************************
+                    type conversion  
+         *************************************/
+// automatic 
+     int x = 10;
+        double y = x;
+
+        System.out.println("int = " +" " +  x);
+        System.out.println("double = " +" "+ y);
+        
+//casting
+        double x = 10.75;
+        int y = (int) x;
+
+        System.out.println(x);
+        System.out.println(y);
+   
     }
     
 }
