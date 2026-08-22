@@ -31,6 +31,46 @@ public class lec_3_prep {
         System.out.println(temperature);
         System.out.println(grade);
         System.out.println(isStudent);
+
+        /**************************************
+                    Literals in java 
+        **************************************/
+          public static void main(String args[]){
+// Integer Literals
+        int decimal = 10;
+        int octal = 012;
+        int hexadecimal = 0x15;
+        int binary = 0b1010;
+// Underscore
+        int bigNumber = 1_000_000;
+// Floating-point Literals
+        double normal = 3.14;
+        double scientific = 2E3;
+// Float
+        float f = 10.5f;
+              
+// Boolean
+        boolean isStudent = true;
+              
+// Character
+        char grade = 'A';
+              
+// Escape Sequences
+        System.out.println("Hello\nWorld");
+        System.out.println("Hello\tJava");
+        System.out.println("C:\\Java");
+        System.out.println("\"Hello\"");
+
+        System.out.println(decimal);
+        System.out.println(octal);
+        System.out.println(hexadecimal);
+        System.out.println(binary);
+        System.out.println(bigNumber);
+        System.out.println(normal);
+        System.out.println(scientific);
+        System.out.println(f);
+        System.out.println(isStudent);
+        System.out.println(grade);
       
     }
     
