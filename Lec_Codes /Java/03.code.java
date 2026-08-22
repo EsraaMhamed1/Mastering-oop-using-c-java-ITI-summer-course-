@@ -114,7 +114,21 @@ public class lec_3_prep {
         int result = a + b;
 
         System.out.println(result);
-   
+              
+
+        /*************************************
+                        Arrays  
+         *************************************/ 
+// simple example 
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        System.out.println(numbers[0]);
+        System.out.println(numbers[2]);
+        System.out.println(numbers[4]);
+
+              
+
+              
     }
     
 }
