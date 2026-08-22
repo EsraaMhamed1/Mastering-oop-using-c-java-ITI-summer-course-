@@ -126,6 +126,9 @@ public class lec_3_prep {
         System.out.println(numbers[2]);
         System.out.println(numbers[4]);
 
+// change value of array 
+        numbers[1] = 100;
+        System.out.println(numbers[1]);
               
 
               
