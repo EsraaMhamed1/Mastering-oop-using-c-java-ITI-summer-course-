@@ -160,6 +160,17 @@ public class lec_3_prep {
         }
 
         System.out.println("Sum = " + sum);
+
+// 2d array
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        System.out.println(matrix[0][0]);
+        System.out.println(matrix[1][2]);
+        System.out.println(matrix[2][1]);
               
               
     }
