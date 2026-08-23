@@ -268,7 +268,7 @@ public class lec_3_prep {
 
         
         /************************************
-                      if statment   
+                      swithc statment   
         ************************************/ 
          int i = 9;
 
@@ -289,7 +289,41 @@ public class lec_3_prep {
             default:
                 System.out.println("i is greater than 2.");
         }
-   
+
+
+        
+        /************************************
+                while & do..while loop    
+        ************************************/ 
+            // while 
+            int m = 1;
+
+            while(m <= 20)
+            {
+                System.out.println(m);
+                m = m + 1;
+            }
+
+        // do while 
+         int m = 1;
+
+        do
+        {
+            System.out.println(m);
+            m = m + 1;
+        }
+        while(m <= 20);
+
+        
+        /************************************
+                        for loop    
+        ************************************/ 
+        for(int i = 0; i < 10; i++)
+            {
+                System.out.println(i);
+            }
+
+        
     }
 }
 
