@@ -102,14 +102,16 @@ public class lec_3_prep {
 
 
          /************************************
-               Ternry operators   
+               Ternary operators   
         ************************************/ 
          int age = 20;
 
         String result = age >= 18 ? "Adult" : "Minor";
         System.out.println(result);
 
-        
+         /************************************
+               instanceof operators   
+        ************************************/ 
 
     }
 }
