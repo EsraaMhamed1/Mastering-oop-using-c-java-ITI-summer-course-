@@ -182,7 +182,13 @@ public class lec_3_prep {
           MyFunction f = x -> x * x;
           System.out.println(f.calculate(5));
 
-        
+        // ()->89.6; 
+         interface Temperature {
+                double getTemperature();
+            }
+
+            Temperature t = () -> 98.6;
+            System.out.println(t.getTemperature());
 
     }
 }
