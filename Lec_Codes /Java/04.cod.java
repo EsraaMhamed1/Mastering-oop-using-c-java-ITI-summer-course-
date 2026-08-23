@@ -75,6 +75,19 @@ public class lec_3_prep {
 
         System.out.println("x >> 1 = " + (x >> 1));
         System.out.println("x >> 2 = " + (x >> 2));
+
+       /************************************
+               Relational operators   
+      ************************************/
+
+        int age = 20;
+
+        System.out.println(age == 20);
+        System.out.println(age != 20);
+        System.out.println(age > 18);
+        System.out.println(age < 18);
+        System.out.println(age >= 18);
+        System.out.println(age <= 18);
  
 
     }
