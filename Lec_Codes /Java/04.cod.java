@@ -1,10 +1,10 @@
-package lec2;
+package lec4;
 
 /**
  *
  * @author HP
  */
-public class lec_3_prep {
+public class lec_4_prep {
     public static void main(String args[]){
       /************************************
                 Arthimetic operators 
@@ -107,6 +107,17 @@ public class lec_3_prep {
          int age = 20;
 
         String result = age >= 18 ? "Adult" : "Minor";
+        System.out.println(result);
+
+        // if 
+        String result;
+
+        if (age >= 18) {
+            result = "Adult";
+        } else {
+            result = "Minor";
+        }
+        
         System.out.println(result);
 
          /************************************
