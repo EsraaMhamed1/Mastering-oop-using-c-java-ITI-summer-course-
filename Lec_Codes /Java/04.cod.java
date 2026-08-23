@@ -371,10 +371,84 @@ public class lec_3_prep {
 
         
          /************************************
-                     
+                     String class 
         ************************************/ 
+        // string pool : 
+        String s1 = "Hello";
+       String s2 = "Hello";
+
+        System.out.println(s1 == s2);
+
+        // new object 
+        String s3 = new String("Hello");
+        String s4 = new String("Hello");
+
+        System.out.println(s3 == s4);
+
+        // string imutable
+        String word = "Java";
+
+       word.concat(" Programming");
+       System.out.println(word);
+
+        // new word 
+        String word = "Java";
+        word = word.concat(" Programming");
+
+        System.out.println(word);
+        
+
+        /************************************
+                     Constructors 
+        ************************************/ 
+        // with prameters 
+        char[] letters = {'J', 'a', 'v', 'a'};
+       String word = new String(letters); // "Java"
+       System.out.println(word);
 
         
+         /************************************
+                    String methods 
+        ************************************/ 
+        // substring()
+        String s = "helping";
+        System.out.println(s.substring(2)); // lping
+
+        // equals() 
+         String s = "java";
+         System.out.println(s.equals("java")); // true
+
+        // concat()
+        String s = "test";
+        s = s.concat("software");
+        System.out.println(s); // testsoftware
+
+        // length()
+        System.out.println( "Problem".length()) ; 
+
+        // charAt
+         System.out.println( "Window".charAt(2)) ; 
+
+
+        /************************************
+                   New features String
+        ************************************/ 
+        // StringBuffer 
+        StringBuffer sb = new StringBuffer("Java");
+
+        sb.append(" Programming");
+        System.out.println(sb);   
+
+        //  StringTokenizer
+        StringTokenizer st = new StringTokenizer("Java is easy");
+
+        while(st.hasMoreTokens()) {
+        System.out.println(st.nextToken());
+           }
+        
+
+        
+
     }
 }
 
