@@ -88,6 +88,17 @@ public class lec_3_prep {
         System.out.println(age < 18);
         System.out.println(age >= 18);
         System.out.println(age <= 18);
+
+
+        /************************************
+               Logical operators   
+       ************************************/
+        int age = 20;
+        boolean hasID = true;
+
+        System.out.println(age >= 18 && hasID);
+        System.out.println(age >= 18 || hasID);
+        System.out.println(!hasID);
  
 
     }
