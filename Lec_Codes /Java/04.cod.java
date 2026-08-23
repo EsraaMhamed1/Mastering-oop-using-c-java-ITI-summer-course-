@@ -53,6 +53,19 @@ public class lec_3_prep {
 
         x %= 3;
         System.out.println("x %= 3 : " + x);
+
+
+       /************************************
+               Bitwise operators   
+      ************************************/
+        
+        int a = 5;
+        int b = 3;
+
+        System.out.println("a & b = " + (a & b));
+        System.out.println("a | b = " + (a | b));
+        System.out.println("a ^ b = " + (a ^ b));
+        System.out.println("~a = " + (~a));
       
  
 
