@@ -99,7 +99,17 @@ public class lec_3_prep {
         System.out.println(age >= 18 && hasID);
         System.out.println(age >= 18 || hasID);
         System.out.println(!hasID);
- 
+
+
+         /************************************
+               Ternry operators   
+        ************************************/ 
+         int age = 20;
+
+        String result = age >= 18 ? "Adult" : "Minor";
+        System.out.println(result);
+
+        
 
     }
 }
