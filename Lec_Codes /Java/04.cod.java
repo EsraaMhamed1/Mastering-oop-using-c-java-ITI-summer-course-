@@ -323,6 +323,57 @@ public class lec_3_prep {
                 System.out.println(i);
             }
 
+          /************************************
+                     Jumb statements    
+        ************************************/ 
+         // break : 
+         outer:
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Pass " + i + ": ");
+
+            for (int j = 0; j < 100; j++) {
+                if (j == 10)
+                    break outer; // exit both loops
+
+                System.out.print(j + " ");
+            }
+
+            System.out.println("This will not print");
+        }
+
+        System.out.println("Loops complete.");
+
+        // continue : 
+        outer:
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (j > i) {
+                    System.out.println();
+                    continue outer;
+                }
+
+                System.out.print(" " + (i * j));
+            }
+
+            System.out.println();
+        }
+
+        // return : 
+        boolean t = true;
+
+        System.out.println("Before the return.");
+
+        if (t)
+            return; // return to caller
+
+        System.out.println("This won't execute.");
+
+
+        
+         /************************************
+                     
+        ************************************/ 
+
         
     }
 }
