@@ -28,6 +28,12 @@ public class lec_3_prep {
         x--;
         System.out.println("After x-- = " + x);
 
+        // postfix & prefix 
+        int x = 5;
+
+        System.out.println(x++);
+        System.out.println(x);
+
       /************************************
                 Arthimetic operators 
       ************************************/
