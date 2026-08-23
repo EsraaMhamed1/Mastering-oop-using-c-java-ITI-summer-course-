@@ -190,6 +190,25 @@ public class lec_3_prep {
             Temperature t = () -> 98.6;
             System.out.println(t.getTemperature());
 
+        // n -> 1.0 / n
+        interface Reciprocal {
+                double calculate(double n);
+            }
+
+            Reciprocal r = n -> 1.0 / n;
+
+            System.out.println(r.calculate(4));
+
+        // n -> (n % 2) == 0:
+        interface CheckNumber {
+               boolean check(int n);
+        }
+
+        CheckNumber even = n -> (n % 2) == 0;
+
+        System.out.println(even.check(4));
+        System.out.println(even.check(7));
+
     }
 }
 
