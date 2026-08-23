@@ -172,8 +172,17 @@ public class lec_3_prep {
         if (ob instanceof A)
             System.out.println("ob is instance of A");
 
+         /************************************
+              Lambda Expression   
+        ************************************/ 
+         @FunctionalInterface
+          interface MyFunction {
+             double calculate(double x);
+            }
+          MyFunction f = x -> x * x;
+          System.out.println(f.calculate(5));
 
-
+        
 
     }
 }
