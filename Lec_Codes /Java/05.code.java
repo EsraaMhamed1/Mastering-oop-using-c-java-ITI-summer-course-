@@ -246,6 +246,9 @@ public class Genriv {
         /************************************
              Reference to a Static Method
         ************************************/
+        // import java.util.Arrays;
+        // import java.util.List;
+        // import java.util.stream.Collectors;
          public static boolean isEven(int number) {
         return number % 2 == 0;
         }
@@ -261,6 +264,51 @@ public class Genriv {
 
         System.out.println(evenNumbers);
 
+         /************************************
+             Reference to a Constructor
+        ************************************/
+        // import java.util.ArrayList;
+        // import java.util.function.Supplier;
+
+         // Lambda
+        Supplier<ArrayList<String>> list1 =
+                () -> new ArrayList<>();
+
+        // Constructor Reference
+        Supplier<ArrayList<String>> list2 =
+                ArrayList::new;
+
+        list1.get().add("Java");
+        list2.get().add("Generics");
+
+        System.out.println(list1.get());
+        System.out.println(list2.get());
+
+
+       /***************************************
+        Instance Method of an Arbitrary Object
+        ***************************************/
+        // import java.util.Arrays;
+        // import java.util.List;
+        // import java.util.function.Function;
+
+          List<String> words =
+                Arrays.asList("Java", "Lambda", "Generics");
+
+          Function<String, Integer> getLength =
+                String::length;
+
+          for (String word : words) {
+              System.out.println(
+                    word + " = " + getLength.apply(word)
+             );
+         }
+
+        
+
+
+
+ 
 
     
         
