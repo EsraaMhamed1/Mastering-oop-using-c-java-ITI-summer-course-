@@ -169,7 +169,6 @@ public class Genriv {
         /************************************
            one interface & Multible Lambda 
         ************************************/
-
         interface NumericTest {
             boolean test(int n, int m);
         }
@@ -197,7 +196,6 @@ public class Genriv {
         /************************************
                 Block Lambda Example 
         ************************************/
-
         interface Calculator {
             int calculate(int a, int b);
         }
@@ -211,6 +209,28 @@ public class Genriv {
         System.out.println(multiply.calculate(5, 4));
 
 
+        /************************************
+             Generic functional interface
+        ************************************/
+        interface SomeTest<T> {
+            boolean test(T a, T b);
+        }
+        // in main : 
+         SomeTest<Integer> isFactor =
+            (n, m) -> n % m == 0;
+
+        System.out.println(
+            isFactor.test(10, 2)
+        );
+
+        SomeTest<String> contains =
+            (a, b) -> a.contains(b);
+
+        System.out.println(
+            contains.test("Java Programming", "Java")
+        );
+
+        
         
        }
     }
