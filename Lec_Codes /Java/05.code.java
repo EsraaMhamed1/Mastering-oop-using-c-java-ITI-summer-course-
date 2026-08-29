@@ -140,8 +140,31 @@ public class Genriv {
            Processor<Report> p = new Processor<>();
            p.process(new Report());
            
+        
+        /************************************
+                    Lambda Expression 
+        ************************************/
+         interface MyValue {
+            double getValue();
+        }
 
-       
+        // in main 
+        MyValue value = () -> 98.6;
+
+        System.out.println("Value = " + value.getValue());
+
+        
+         /************************************
+                 Lambda with prameters 
+        ************************************/
+        interface Calculator {
+            int calculate(int a, int b);
+        }
+
+        // in main 
+        Calculator add = (a, b) -> a + b;
+        System.out.println(add.calculate(10, 20));
+               
     
 
         
