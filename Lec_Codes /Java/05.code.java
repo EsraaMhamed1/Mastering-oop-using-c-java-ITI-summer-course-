@@ -23,10 +23,11 @@ public class Genriv {
 
         String file = (String) files.get(0);
         System.out.println(file);
+
+        
         /************************************
                   After Generics
         ************************************/ 
-        
         ArrayList<String> files = new ArrayList<>();
 
         files.add("file1.txt");
