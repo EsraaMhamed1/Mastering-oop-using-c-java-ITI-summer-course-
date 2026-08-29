@@ -304,14 +304,20 @@ public class Genriv {
              );
          }
 
+
+        /***************************************
+         Instance Method of a Particular Object
+        ***************************************/
+        String prefix = "Hello ";
         
+        Function<String, String> addPrefix =
+                prefix::concat;
+
+        System.out.println(addPrefix.apply("Java"));
+                
 
 
 
- 
-
-    
-        
        }
     }
     
