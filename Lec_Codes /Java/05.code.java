@@ -164,8 +164,34 @@ public class Genriv {
         // in main 
         Calculator add = (a, b) -> a + b;
         System.out.println(add.calculate(10, 20));
-               
-    
+
+        
+        /************************************
+           one interface & Multible Lambda 
+        ************************************/
+
+        interface NumericTest {
+            boolean test(int n, int m);
+        }
+
+        // in main : 
+        // Check if m is a factor of n
+        NumericTest isFactor =
+            (n, m) -> (n % m) == 0;
+
+        System.out.println(isFactor.test(10, 2));
+
+        // Check if n is less than m
+        NumericTest isLessThan =
+            (n, m) -> n < m;
+
+        System.out.println(isLessThan.test(10, 20));
+
+        // Check if absolute values are equal
+        NumericTest absEqual =
+            (n, m) -> Math.abs(n) == Math.abs(m);
+
+        System.out.println(absEqual.test(4, -4));
 
         
        }
