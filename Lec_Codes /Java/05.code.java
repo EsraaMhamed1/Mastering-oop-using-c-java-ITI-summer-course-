@@ -77,6 +77,37 @@ public class Genriv {
         print(100);
         print(10.5); 
 
+        /************************************
+                 Bounded Type Parameters
+        ************************************/ 
+
+        class Calculator<T extends Number> {
+
+        private T number;
+    
+        public Calculator(T number) {
+            this.number = number;
+        }
+    
+        public double square() {
+            double value = number.doubleValue();
+            return value * value;
+        }
+    }
+
+
+        Calculator<Integer> c1 =
+                new Calculator<>(5);
+
+        Calculator<Double> c2 =
+                new Calculator<>(2.5);
+
+        System.out.println(c1.square());
+        System.out.println(c2.square());
+
+
+        
+
 
         
 
