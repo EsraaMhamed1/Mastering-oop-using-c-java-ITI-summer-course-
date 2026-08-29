@@ -95,7 +95,7 @@ public class Genriv {
         }
     }
 
-
+        // main 
         Calculator<Integer> c1 =
                 new Calculator<>(5);
 
@@ -106,7 +106,41 @@ public class Genriv {
         System.out.println(c2.square());
 
 
+         /************************************
+                     Multi Bounded 
+        ************************************/
+        interface Printable {
+            void print();
+        }
         
+        interface Showable {
+            void show();
+        }
+        
+        class Report implements Printable, Showable {
+        
+            public void print() {
+                System.out.println("Printing report");
+            }
+        
+            public void show() {
+                System.out.println("Showing report");
+            }
+        }
+        
+        class Processor<T extends Report & Printable & Showable> {
+        
+            public void process(T item) {
+                item.print();
+                item.show();
+            }
+        }
+        
+        // main 
+           Processor<Report> p = new Processor<>();
+           p.process(new Report());
+           
+
 
 
         
