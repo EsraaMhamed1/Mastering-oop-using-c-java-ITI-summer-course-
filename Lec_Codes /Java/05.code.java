@@ -308,6 +308,8 @@ public class Genriv {
         /***************************************
          Instance Method of a Particular Object
         ***************************************/
+        // import java.util.function.Function;
+
         String prefix = "Hello ";
         
         Function<String, String> addPrefix =
