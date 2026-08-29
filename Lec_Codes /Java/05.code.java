@@ -193,6 +193,24 @@ public class Genriv {
 
         System.out.println(absEqual.test(4, -4));
 
+
+        /************************************
+                Block Lambda Example 
+        ************************************/
+
+        interface Calculator {
+            int calculate(int a, int b);
+        }
+       // in main : 
+        
+        Calculator multiply = (a, b) -> {
+            int result = a * b;
+            return result;
+        };
+
+        System.out.println(multiply.calculate(5, 4));
+
+
         
        }
     }
