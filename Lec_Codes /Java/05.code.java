@@ -231,6 +231,17 @@ public class Genriv {
         );
 
         
+        /************************************
+                   Method Reference
+        ************************************/
+            //import java.util.Arrays;
+            //import java.util.List;
+
+            List<String> names =
+                   Arrays.asList("Ali", "Sara", "Omar");
+
+            names.forEach(System.out::println);
+        
         
        }
     }
