@@ -59,9 +59,26 @@ public class Genriv {
         }
     }
 
+       //  Pair<String> p1;  //  T = String 
+        Pair<String> p1 =
+        new Pair<>("Hello", "Java");
+    
+        String x = p1.getFirst();
+        System.out.println(x);
+     
         
+       /************************************
+                  Generic Method
+        ************************************/ 
+         public static <T> void print(T value) {
+         System.out.println(value);
+
+        print("hello"); 
+        print(100);
+        print(10.5); 
+
+
         
-       
 
         
        }
