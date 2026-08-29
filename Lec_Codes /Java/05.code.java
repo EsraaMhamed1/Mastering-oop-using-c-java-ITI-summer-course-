@@ -241,7 +241,28 @@ public class Genriv {
                    Arrays.asList("Ali", "Sara", "Omar");
 
             names.forEach(System.out::println);
+
         
+        /************************************
+             Reference to a Static Method
+        ************************************/
+         public static boolean isEven(int number) {
+        return number % 2 == 0;
+        }
+    
+        // in main : 
+        List<Integer> numbers =
+                Arrays.asList(1, 2, 3, 4, 5, 6);
+
+        List<Integer> evenNumbers =
+                numbers.stream()
+                       .filter(Main::isEven)
+                       .collect(Collectors.toList());
+
+        System.out.println(evenNumbers);
+
+
+    
         
        }
     }
