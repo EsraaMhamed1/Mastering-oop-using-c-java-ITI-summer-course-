@@ -260,6 +260,75 @@ public class Main {
           a.removeIf(x -> x.equals("B"));
           System.out.println(a);
 
+
+
+         /***************************************
+                      TreeMap
+         **************************************/
+            Map<Integer, String> map = new TreeMap<>();
+
+            map.put(30, "Mona");
+            map.put(10, "Ali");
+            map.put(20, "Sara");
+            
+            System.out.println(map);
+
+          /***************************************
+                     HAshMap
+          **************************************/
+            class Employee {
+            private String name;
+        
+            public Employee(String name) {
+                this.name = name;
+            }
+        
+            public String getName() {
+                return name;
+            }
+        
+            @Override
+            public String toString() {
+                return name;
+            }
+        }
+        //  inside main : 
+            Map<String, Employee> staff = new HashMap<>();
+
+            staff.put("987-98-9996", new Employee("Harry"));
+            staff.put("123-45-6789", new Employee("Mona"));
+    
+            Employee e = staff.get("987-98-9996");
+    
+            System.out.println(e);
+
+            
+          /***************************************
+                    Iteration throw a map 
+          **************************************/
+            Map<String, Integer> scores = new HashMap<>();
+            
+            scores.put("Ali", 90);
+            scores.put("Mona", 85);
+            scores.put("Sara", 95);
+            
+            scores.forEach((name, score) ->
+                System.out.println(name + " = " + score)
+            );
+                        
+
+          /***************************************
+                   Updating Map Entries
+          **************************************/
+
+            Map<String, Integer> counts = new HashMap<>();
+
+            counts.put("Java", 1);
+            
+            counts.put("Java", counts.get("Java") + 1);
+            
+            System.out.println(counts);
+
             
     }
         
