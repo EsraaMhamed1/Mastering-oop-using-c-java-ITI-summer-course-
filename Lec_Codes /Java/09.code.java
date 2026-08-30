@@ -193,11 +193,31 @@ public class Main {
             }
         }    
 
-                   
+        // resolve it : 
 
          /***************************************
+                   LinkedList Example
+         **************************************/
+         List<String> a = new LinkedList<>();
+
+        a.add("A");
+        a.add("B");
+        a.add("C");
+        
+        List<String> b = new LinkedList<>();
+        
+        b.add("D");
+        b.add("E");
+        b.add("F");
+        
+        a.addAll(b);
+        
+        System.out.println(a);
+
+        /***************************************
                     LinkedList Methods
          **************************************/
+
   
     }
         
