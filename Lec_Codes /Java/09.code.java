@@ -63,8 +63,46 @@ public class Main {
         Queue<String> q1 = new LinkedList<>();
         Queue<String> q2 = new ArrayDeque<>();
 
-        
-                
+
+            
+            // collection -> ome element 
+            List<String> students = new ArrayList<>();
+
+            // Map: -> Key , value 
+            Map<Integer, String> students = new HashMap<>();
+
+            students.put(101, "Ali");
+            students.put(102, "Mona");
+
+            /***************************************
+                              List 
+           **************************************/
+            List<String> list = new ArrayList<>();
+
+            list.add("A");
+            list.add("A");
+            list.add("B");
+            
+            System.out.println(list);
+
+            /***************************************
+                               Set 
+            **************************************/
+            Set<String> set = new HashSet<>();
+
+            set.add("A");
+            set.add("A");
+            set.add("B");
+            
+            System.out.println(set);
+
+            
+            /***************************************
+                               Set 
+            **************************************/
+
+
+
     }
     
 }
