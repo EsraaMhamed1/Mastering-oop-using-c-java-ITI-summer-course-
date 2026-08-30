@@ -159,6 +159,25 @@ public class Main {
         list.remove(1);
         
         System.out.println(list);
+
+
+         /***************************************
+                       ListIterator
+         **************************************/
+        List<String> names = new LinkedList<>();
+
+        names.add("Ali");
+        names.add("Mona");
+        names.add("Sara");
+
+        ListIterator<String> iterator =
+                names.listIterator();
+
+        System.out.println(iterator.next());
+        System.out.println(iterator.next());
+
+        System.out.println(iterator.previous());
+
                    
 
     }
