@@ -358,6 +358,53 @@ public class Main {
           /***************************************
                        Sorting     
           **************************************/
+            List<Integer> numbers =
+                    new ArrayList<>(List.of(40, 10, 30, 20));
+            
+            Collections.sort(numbers);
+            
+            System.out.println(numbers);
+
+           /***************************************
+                        Descending Order    
+           **************************************/
+            List<Integer> numbers =
+                    new ArrayList<>(List.of(40, 10, 30, 20));
+            
+            Collections.sort(
+                numbers,
+                Comparator.reverseOrder()
+            );
+            
+            System.out.println(numbers);
+
+           /***************************************
+                        Shuffling    
+           **************************************/
+            List<Integer> numbers =
+                    new ArrayList<>(List.of(40, 10, 30, 20));
+            
+            Collections.shuffle(numbers);
+            
+            System.out.println(numbers);
+
+
+           /***************************************
+                       Binary Search    
+           **************************************/
+            List<Integer> numbers =
+                    List.of(10, 20, 30, 40, 50);
+            
+            int index =
+                Collections.binarySearch(numbers, 30);
+            
+            System.out.println(index);
+
+     
+           /***************************************
+                       Binary Search    
+           **************************************/
+        
             
     }
         
