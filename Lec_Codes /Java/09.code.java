@@ -98,11 +98,56 @@ public class Main {
 
             
             /***************************************
-                               Set 
+                            TreeSet 
             **************************************/
+            SortedSet<Integer> numbers = new TreeSet<>();
+
+            numbers.add(30);
+            numbers.add(10);
+            numbers.add(20);
+            
+            System.out.println(numbers);
+
+     
+            /***************************************
+                            TreeMap 
+            **************************************/
+            SortedMap<Integer, String> students = new TreeMap<>();
+
+            students.put(103, "Sara");
+            students.put(101, "Ali");
+            students.put(102, "Mona");
+            
+            System.out.println(students);
+      
+
+            List<String> names = new ArrayList<>();
 
 
+         /***************************************
+                        LinkedList  
+         **************************************/
+         LinkedList<String> staff = new LinkedList<>();
+
+        staff.add("First");
+        staff.add("Second");
+        staff.add("Third");
+
+        Iterator<String> iter =
+                staff.iterator();
+
+        String first = iter.next();
+        String second = iter.next();
+
+        iter.remove();
+
+        System.out.println(staff);
+    
+
+            List        → Interface
+            ArrayList   → Concrete Class
 
     }
+        
     
 }
