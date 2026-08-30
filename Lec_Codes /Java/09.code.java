@@ -28,10 +28,28 @@ public class Main {
 
 
        /***************************************
-                   Collection 
+                       Itretor 
        **************************************/
 
+        // import java.util.*; 
+        Collection<String> names = new ArrayList<>();
 
+        names.add("Ahmed");
+        names.add("Mona");
+        names.add("Ali");
+
+        Iterator<String> it = names.iterator();
+
+        while (it.hasNext()) {
+            String name = it.next();
+            System.out.println(name);
+        }
+
+
+       /***************************************
+                       Itretor 
+       **************************************/
+        
         Queue<String> queue;
 
 
