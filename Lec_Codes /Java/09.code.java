@@ -178,8 +178,27 @@ public class Main {
 
         System.out.println(iterator.previous());
 
+
+            
+         /***************************************
+                 Concurrent Modification
+         **************************************/
+        List<String> list =
+        new ArrayList<>(List.of("A", "B", "C"));
+
+        for (String x : list) {
+        
+            if (x.equals("B")) {
+                list.remove(x);
+            }
+        }    
+
                    
 
+         /***************************************
+                    LinkedList Methods
+         **************************************/
+  
     }
         
     
