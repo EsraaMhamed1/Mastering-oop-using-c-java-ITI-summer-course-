@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package customexceptiondemo;
+package Main;
 
 /**
  *
@@ -10,7 +10,7 @@ package customexceptiondemo;
  */
 
 
-public class ArrList {
+public class Main {
     public static void main(String args[]){
 
 
@@ -31,7 +31,15 @@ public class ArrList {
                    Collection 
        **************************************/
 
-      
+
+        Queue<String> queue;
+
+
+        Queue<String> q1 = new LinkedList<>();
+        Queue<String> q2 = new ArrayDeque<>();
+
+        
+                
     }
     
 }
