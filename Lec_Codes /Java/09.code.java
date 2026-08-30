@@ -329,6 +329,35 @@ public class Main {
             
             System.out.println(counts);
 
+
+           /***************************************
+                          MapViews 
+          **************************************/
+            Map<String, Integer> map = new HashMap<>();
+    
+            map.put("Ali", 90);
+            map.put("Mona", 85);
+            map.put("Sara", 95);
+    
+            System.out.println(map.keySet());
+            System.out.println(map.values());
+            System.out.println(map.entrySet());
+
+            
+           /***************************************
+                       Finding max     
+          **************************************/
+
+            List<Integer> numbers =
+                    List.of(10, 40, 20, 70, 30);
+            
+            int max = Collections.max(numbers);
+            
+            System.out.println(max);
+
+          /***************************************
+                       Sorting     
+          **************************************/
             
     }
         
