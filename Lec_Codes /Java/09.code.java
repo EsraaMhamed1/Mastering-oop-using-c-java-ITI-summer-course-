@@ -194,6 +194,21 @@ public class Main {
         }    
 
         // resolve it : 
+         List<String> list =
+                new ArrayList<>(List.of("A", "B", "C"));
+
+        Iterator<String> iterator = list.iterator();
+
+        while (iterator.hasNext()) {
+
+            String x = iterator.next();
+
+            if (x.equals("B")) {
+                iterator.remove(); // ✅
+            }
+        }
+
+        System.out.println(list);
 
          /***************************************
                    LinkedList Example
@@ -215,10 +230,37 @@ public class Main {
         System.out.println(a);
 
         /***************************************
-                    LinkedList Methods
+                    Merge + Remove
          **************************************/
+         List<String> a =
+                new ArrayList<>(List.of("A", "B", "C"));
 
-  
+        ListIterator<String> iter = a.listIterator();
+
+        while (iter.hasNext()) {
+
+            String value = iter.next();
+
+            if (value.equals("B")) {
+                iter.remove();
+            }
+        }
+
+        System.out.println(a);
+            
+
+         /***************************************
+                       removeIF
+         **************************************/
+         List<String> a =
+                new LinkedList<>(
+                    List.of("A", "D", "B", "E", "F", "G")
+                );
+        
+          a.removeIf(x -> x.equals("B"));
+          System.out.println(a);
+
+            
     }
         
     
