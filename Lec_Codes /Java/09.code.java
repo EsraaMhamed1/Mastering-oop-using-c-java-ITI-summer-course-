@@ -45,7 +45,14 @@ public class Main {
             System.out.println(name);
         }
 
+        // remove name :
+        while (it.hasNext()) {
 
+        String name = it.next();
+    
+        if (name.equals("Ali")) {
+            it.remove();
+        }
        /***************************************
                        Itretor 
        **************************************/
