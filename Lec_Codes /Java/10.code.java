@@ -370,8 +370,34 @@ public class Main {
 
 
           /***********************************
-                    summarizingDouble
+                    reducing 
           ************************************/
+         List<Employee> employees = Arrays.asList(
+                new Employee(1, "Ali", 100000),
+                new Employee(2, "Mona", 250000),
+                new Employee(3, "Omar", 150000),
+                new Employee(4, "Sara", 300000)
+        );
+
+        Optional<Employee> highestPaid =
+                employees.stream()
+                         .collect(
+                             Collectors.reducing(
+                                 (e1, e2) ->
+                                     e1.getSalary() > e2.getSalary()
+                                     ? e1
+                                     : e2
+                             )
+                         );
+
+         highestPaid.ifPresent(
+                employee ->
+                        System.out.println(
+                                "Highest Paid: " + employee
+                        )
+        );
+
+
         
 
         
