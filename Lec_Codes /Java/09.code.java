@@ -26,6 +26,197 @@ public class Main {
 
         System.out.println(students);
 
+        
+      /***************************************
+                Queue Implementations 
+       **************************************/
+        // interface : 
+        interface MyQueue<E> {
+        
+            void add(E element);
+        
+            E remove();
+        
+            int size();
+        
+            boolean isEmpty();
+        }
+
+        // Circular arr : 
+           class CircularArrayQueue<E> implements MyQueue<E> {
+        
+            private E[] elements;
+            private int head;
+            private int tail;
+            private int size;
+        
+            @SuppressWarnings("unchecked")
+            public CircularArrayQueue(int capacity) {
+        
+                if (capacity <= 0) {
+                    throw new IllegalArgumentException(
+                        "Capacity must be greater than 0"
+                    );
+                }
+        
+                elements = (E[]) new Object[capacity];
+        
+                head = 0;
+                tail = 0;
+                size = 0;
+            }
+        
+            @Override
+            public void add(E element) {
+        
+                if (size == elements.length) {
+                    throw new IllegalStateException(
+                        "Queue is full"
+                    );
+                }
+        
+                elements[tail] = element;
+        
+                // Move tail circularly
+                tail = (tail + 1) % elements.length;
+        
+                size++;
+            }
+        
+            @Override
+            public E remove() {
+        
+                if (isEmpty()) {
+                    throw new IllegalStateException(
+                        "Queue is empty"
+                    );
+                }
+        
+                E element = elements[head];
+        
+                elements[head] = null;
+        
+                // Move head circularly
+                head = (head + 1) % elements.length;
+        
+                size--;
+        
+                return element;
+            }
+        
+            @Override
+            public int size() {
+                return size;
+            }
+        
+            @Override
+            public boolean isEmpty() {
+                return size == 0;
+            }
+        }
+        
+        // Linked List : 
+        class LinkedListQueue<E> implements MyQueue<E> {
+        
+            private Node<E> head;
+            private Node<E> tail;
+            private int size;
+        
+            // Node class
+            private static class Node<E> {
+        
+                E data;
+                Node<E> next;
+        
+                Node(E data) {
+                    this.data = data;
+                    this.next = null;
+                }
+            }
+        
+            @Override
+            public void add(E element) {
+        
+                Node<E> newNode = new Node<>(element);
+        
+                if (isEmpty()) {
+        
+                    head = newNode;
+                    tail = newNode;
+        
+                } else {
+        
+                    tail.next = newNode;
+                    tail = newNode;
+                }
+        
+                size++;
+            }
+        
+            @Override
+            public E remove() {
+        
+                if (isEmpty()) {
+                    throw new IllegalStateException(
+                        "Queue is empty"
+                    );
+                }
+        
+                E element = head.data;
+        
+                head = head.next;
+        
+                size--;
+        
+                if (size == 0) {
+                    tail = null;
+                }
+        
+                return element;
+            }
+        
+            @Override
+            public int size() {
+                return size;
+            }
+        
+            @Override
+            public boolean isEmpty() {
+                return size == 0;
+            }
+        }
+        
+                
+        // Inside main : 
+        // Circular Array Queue
+        MyQueue<String> arrayQueue =
+                new CircularArrayQueue<>(5);
+
+        arrayQueue.add("Harry");
+        arrayQueue.add("Mona");
+        arrayQueue.add("Ali");
+
+        System.out.println("Array Queue:");
+        System.out.println(arrayQueue.remove());
+        System.out.println(arrayQueue.remove());
+        System.out.println("Size = " + arrayQueue.size());
+
+
+        System.out.println();
+
+
+        // Linked List Queue
+        MyQueue<String> linkedQueue =
+                new LinkedListQueue<>();
+
+        linkedQueue.add("Ahmed");
+        linkedQueue.add("Sara");
+        linkedQueue.add("Omar");
+
+        System.out.println("Linked List Queue:");
+        System.out.println(linkedQueue.remove());
+        System.out.println(linkedQueue.remove());
+        System.out.println("Size = " + linkedQueue.size());
 
        /***************************************
                        Itretor 
@@ -53,27 +244,8 @@ public class Main {
         if (name.equals("Ali")) {
             it.remove();
         }
-       /***************************************
-                       Itretor 
-       **************************************/
-        
-        Queue<String> queue;
-
-
-        Queue<String> q1 = new LinkedList<>();
-        Queue<String> q2 = new ArrayDeque<>();
-
-
-            
-            // collection -> ome element 
-            List<String> students = new ArrayList<>();
-
-            // Map: -> Key , value 
-            Map<Integer, String> students = new HashMap<>();
-
-            students.put(101, "Ali");
-            students.put(102, "Mona");
-
+      
+     
             /***************************************
                               List 
            **************************************/
