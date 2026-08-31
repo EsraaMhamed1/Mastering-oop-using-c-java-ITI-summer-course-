@@ -93,7 +93,19 @@ public class Main {
 
 
          /***********************************
-            Multiple Intermediate Operations
+                        peek()
+         ************************************/
+        List<Integer> numbers =
+                List.of(10, 20, 10, 30, 20, 40);
+        numbers.stream()
+               .filter(n -> n > 10)
+               .peek(n -> System.out.println("After filter: " + n))
+               .map(n -> n * 2)
+               .toList();
+
+
+        /***********************************
+                        peek()
          ************************************/
 
 
