@@ -398,8 +398,30 @@ public class Main {
         );
 
 
-        
+        /***********************************
+                    files  
+          ************************************/
+        // import java.io.IOException;
+        // import java.nio.file.Files;
+        // import java.nio.file.Path;
+        Path file = Path.of("input.txt");
 
+        try (var lines = Files.lines(file)) {
+
+            lines.filter(line -> !line.isBlank())
+                 .forEach(System.out::println);
+
+        } catch (IOException e) {
+
+            System.out.println(
+                    "Error reading file: " + e.getMessage()
+            );
+        }
+        
+        
+          /***********************************
+                    reducing 
+          ************************************/
         
     }
     
