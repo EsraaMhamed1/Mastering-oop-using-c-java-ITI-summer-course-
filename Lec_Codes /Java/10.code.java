@@ -12,11 +12,11 @@ import java.util.*;
 
 public class Main {
     public static void main(String args[]){
-
-    /*********************************
-                filter()
-    *********************************/
-    List<Integer> numbers =
+        
+            /*********************************
+                        filter()
+            *********************************/
+        List<Integer> numbers =
                 List.of(10, 15, 20, 25, 30, 35);
 
         List<Integer> evenNumbers =
@@ -28,10 +28,47 @@ public class Main {
 
 
       
-    /*********************************
-                filter()
-    *********************************/
+            /*********************************
+                       sorted()
+            *********************************/
 
+        List<String> names =
+                List.of("Omar", "Ali", "Mona", "Sara");
+        
+        List<String> result =
+                names.stream()
+                     .sorted()
+                     .toList();
+        
+        System.out.println(result);
+
+        // Reverse Order
+        List<String> result =
+                names.stream()
+                     .sorted(Comparator.reverseOrder())
+                     .toList();
+        
+        System.out.println(result);
+        
+
+
+            /*********************************
+                        distinct()
+            *********************************/
+        List<Integer> numbers =
+                List.of(10, 20, 10, 30, 20, 40);
+
+        List<Integer> result =
+                numbers.stream()
+                       .distinct()
+                       .toList();
+        System.out.println(result);
+
+
+            /*********************************
+                       limit()
+            *********************************/
+  
       
     }
     
