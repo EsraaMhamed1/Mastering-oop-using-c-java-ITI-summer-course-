@@ -321,6 +321,42 @@ public class Main {
 
         System.out.println(result);
 
+
+         /***********************************
+                  collect.groupingBy() 
+          ************************************/
+        // employee example : 
+         Map<String, List<Employee>> employeesByName =
+        employees.stream()
+                 .collect(
+                     Collectors.groupingBy(
+                         Employee::getName
+                     )
+                 );
+        System.out.println(employeesByName);
+
+
+        
+         /***********************************
+                 collect.partitioningBy() 
+          ************************************/
+        Map<Boolean, List<Employee>> result =
+        employees.stream()
+                 .collect(
+                     Collectors.partitioningBy(
+                         e -> e.getSalary() > 200000
+                     )
+                 );
+
+
+        
+         /***********************************
+                    collect.joining() 
+          ************************************/
+
+
+        
+
         
     }
     
