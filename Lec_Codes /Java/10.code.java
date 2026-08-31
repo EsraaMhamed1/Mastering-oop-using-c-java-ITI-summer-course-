@@ -146,8 +146,87 @@ public class Main {
          
          System.out.println(employees);
 
-  
-      
+         /***********************************
+                       Employee
+         ************************************/
+
+
+        employees.stream()
+         .forEach(employee ->
+                 System.out.println(employee.getName()));
+
+
+
+        List<Employee> highPaidEmployees =
+        employees.stream()
+                 .filter(employee -> employee.getSalary() > 200000)
+                 .toList();
+
+
+        List<String> employeeNames =
+        employees.stream()
+                 .map(employee -> employee.getName())
+                 .toList();
+
+        /***********************************
+                       Filter Then Map
+         ************************************/
+            List<String> highPaidNames =
+                employees.stream()
+                         .filter(employee -> employee.getSalary() > 200000)
+                         .map(Employee::getName)
+                         .toList();
+
+
+        /***********************************
+                       Sorting Employees
+         ************************************/
+        List<Employee> sortedEmployees =
+        employees.stream()
+                 .sorted(Comparator.comparing(Employee::getSalary))
+                 .toList();
+        
+        
+        /***********************************
+             Sorting in Descending Order
+         ************************************/
+        
+        List<Employee> sortedEmployees =
+        employees.stream()
+                 .sorted(
+                     Comparator.comparing(Employee::getSalary)
+                               .reversed()
+                 )
+                 .toList();
+
+
+
+        
+        /***********************************
+                    Filter, Map & Sort
+         ************************************/
+           List<Employee> employees = Arrays.asList(
+                new Employee(1, "Jeff Bezos", 100000),
+                new Employee(2, "Bill Gates", 200000),
+                new Employee(3, "Mark Zuckerberg", 300000),
+                new Employee(4, "Elon Musk", 250000)
+        );
+
+        List<String> result =
+                employees.stream()
+                         .filter(employee ->
+                                 employee.getSalary() > 150000)
+                         .sorted(
+                                 Comparator.comparing(
+                                         Employee::getSalary
+                                 ).reversed()
+                          )
+                         .map(Employee::getName)
+                         .toList();
+
+        result.forEach(System.out::println);
+ 
+           
     }
     
 }
