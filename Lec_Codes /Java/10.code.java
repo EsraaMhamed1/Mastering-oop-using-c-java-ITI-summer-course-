@@ -270,9 +270,56 @@ public class Main {
 
 
             /***********************************
-                  sum() and average()
+                          reduce()
             ************************************/
+        
+          List<Integer> numbers =
+                List.of(1, 2, 3, 4, 5);
 
+        int product =
+                numbers.stream()
+                       .reduce(1, (a, b) -> a * b);
+
+        System.out.println(product);
+
+           /***********************************
+                       collect.ToList() 
+            ************************************/
+        
+        List<Integer> numbers =
+                List.of(10, 20, 30, 40, 50);
+
+        List<Integer> result =
+                numbers.stream()
+                       .filter(n -> n >= 30)
+                       .collect(Collectors.toList());
+
+        System.out.println(result);
+
+            /***********************************
+                       collect.toSet() 
+            ************************************/
+        
+        List<Integer> numbers =
+                List.of(10, 20, 10, 30, 20, 40);
+
+        Set<Integer> result =
+                numbers.stream()
+                       .collect(Collectors.toSet());
+
+        System.out.println(result);
+
+         /***********************************
+                    collect.joining() 
+          ************************************/
+         List<String> names =
+                List.of("Ali", "Mona", "Omar", "Sara");
+
+        String result =
+                names.stream()
+                     .collect(Collectors.joining(", "));
+
+        System.out.println(result);
 
         
     }
