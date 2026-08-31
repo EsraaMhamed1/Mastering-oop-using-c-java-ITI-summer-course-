@@ -253,9 +253,28 @@ public class Main {
                  .orElseThrow();
            
          /***********************************
-                      min() and max()
+                  sum() and average()
          ************************************/
-           
+        // sum :
+        double totalSalary =
+             employees.stream()
+                 .mapToDouble(Employee::getSalary)
+                 .sum();
+
+        // avg:
+           double averageSalary =
+               employees.stream()
+                 .mapToDouble(Employee::getSalary)
+                 .average()
+                 .orElse(0.0);
+
+
+            /***********************************
+                  sum() and average()
+            ************************************/
+
+
+        
     }
     
 }
