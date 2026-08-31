@@ -225,6 +225,18 @@ public class Main {
                          .toList();
 
         result.forEach(System.out::println);
+
+
+        
+        /***********************************
+                      count()
+         ************************************/
+
+        long count =
+        employees.stream()
+                 .filter(e -> e.getSalary() > 150000)
+                 .count();
+           
  
            
     }
