@@ -76,9 +76,26 @@ public class Main {
                        .toList();
         System.out.println(result);
         
-         /*********************************
-                       limit()
-         *********************************/
+         /***********************************
+            Multiple Intermediate Operations
+         ************************************/
+        List<Integer> numbers =
+                List.of(10, 20, 10, 30, 20, 40);
+        List<Integer> result =
+                numbers.stream()
+                       .filter(n -> n % 2 == 0)
+                       .distinct()
+                       .sorted()
+                       .limit(3)
+                       .toList();
+        
+        System.out.println(result);
+
+
+         /***********************************
+            Multiple Intermediate Operations
+         ************************************/
+
 
 
   
