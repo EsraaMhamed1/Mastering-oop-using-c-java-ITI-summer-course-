@@ -105,10 +105,46 @@ public class Main {
 
 
         /***********************************
-                        peek()
+                       Employee
          ************************************/
+        class Employee{
+            private int id;
+            private String name;
+            private double salary;
+        
+            public Employee(int id, String name, double salary) {
+                this.id = id;
+                this.name = name;
+                this.salary = salary;
+            }
+        
+            public int getId() {
+                return id;
+            }
+        
+            public String getName() {
+                return name;
+            }
+        
+            public double getSalary() {
+                return salary;
+            }
+        
+            @Override
+            public String toString() {
+                return name + " - " + salary;
+            }
+        }
 
-
+        // inside main : 
+         List<Employee> employees = Arrays.asList(
+                        new Employee(1, "Jeff Bezos", 100000),
+                        new Employee(2, "Bill Gates", 200000),
+                        new Employee(3, "Mark Zuckerberg", 300000),
+                        new Employee(4, "Elon Musk", 250000)
+                );
+         
+         System.out.println(employees);
 
   
       
