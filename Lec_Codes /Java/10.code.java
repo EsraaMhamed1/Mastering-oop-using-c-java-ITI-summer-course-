@@ -350,11 +350,28 @@ public class Main {
 
 
         
-         /***********************************
-                    collect.joining() 
+          /***********************************
+                    summarizingDouble
           ************************************/
+        // employee : 
+        DoubleSummaryStatistics stats =
+            employees.stream()
+                     .collect(
+                         Collectors.summarizingDouble(
+                             Employee::getSalary
+                         )
+                     );
+        
+        System.out.println("Count: " + stats.getCount());
+        System.out.println("Sum: " + stats.getSum());
+        System.out.println("Min: " + stats.getMin());
+        System.out.println("Max: " + stats.getMax());
+        System.out.println("Average: " + stats.getAverage());
 
 
+          /***********************************
+                    summarizingDouble
+          ************************************/
         
 
         
