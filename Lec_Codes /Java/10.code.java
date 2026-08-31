@@ -236,8 +236,25 @@ public class Main {
         employees.stream()
                  .filter(e -> e.getSalary() > 150000)
                  .count();
+
+        
+        /***********************************
+                      min() and max()
+         ************************************/
+
+        
+        Employee highestPaid =
+        employees.stream()
+                 .max(
+                     Comparator.comparing(
+                         Employee::getSalary
+                     )
+                 )
+                 .orElseThrow();
            
- 
+         /***********************************
+                      min() and max()
+         ************************************/
            
     }
     
