@@ -205,6 +205,29 @@ public class Main {
         }
 
         System.out.println("Main: Worker finished!");
+
+   
+        /**********************************
+                  without join() 
+        **********************************/
+
+        Thread worker = new Thread(() -> {
+
+            for (int i = 1; i <= 3; i++) {
+
+                System.out.println("Worker: " + i);
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+        });
+
+        worker.start();
+
+        System.out.println("Main: Worker finished!");
         
    }
     
