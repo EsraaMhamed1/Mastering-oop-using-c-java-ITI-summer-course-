@@ -161,7 +161,51 @@ public class Main {
             Thread.currentThread().interrupt();
         }
          
-                
+          
+        /**********************************
+                  Thread.sleep() 
+        **********************************/
+
+        System.out.println("Start");
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("End");       
+
+
+   
+        /**********************************
+                  Thread.join() 
+        **********************************/
+
+        Thread worker = new Thread(() -> {
+
+            for (int i = 1; i <= 3; i++) {
+
+                System.out.println("Worker: " + i);
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+        });
+
+        worker.start();
+
+        try {
+            worker.join();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        System.out.println("Main: Worker finished!");
+        
    }
     
 }
