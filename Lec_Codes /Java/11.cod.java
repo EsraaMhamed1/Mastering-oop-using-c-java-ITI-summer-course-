@@ -1,11 +1,32 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package lecture_11;
 
-Thread t1 = new Thread(() ->
-    System.out.println("Thread 1")
-);
+/**
+ *
+ * @author HP
+ */
 
-Thread t2 = new Thread(() ->
-    System.out.println("Thread 2")
-);
+public class Main {
 
-t1.start();
-t2.start();
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    
+        Thread t1 = new Thread(() ->
+            System.out.println("Thread 1")
+        );
+
+        Thread t2 = new Thread(() ->
+            System.out.println("Thread 2")
+        );
+
+        t1.start();
+        t2.start();
+
+    }
+    
+}
