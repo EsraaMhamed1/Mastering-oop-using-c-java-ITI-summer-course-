@@ -43,6 +43,22 @@ public class Main {
         // Implement the Runnable interface
         class MyTask implements Runnable
 
+            
+        /**********************************
+             2 ways to create Treads 
+        **********************************/
+
+         class MyThread extends Thread {
+
+              @Override
+              public void run() {
+                     System.out.println("Hello from MyThread");
+                }
+          }
+        // inside main : 
+        MyThread t = new MyThread();
+        t.start();
+        
 
             
     }
