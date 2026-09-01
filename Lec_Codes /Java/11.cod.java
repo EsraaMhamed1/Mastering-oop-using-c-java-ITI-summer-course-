@@ -119,9 +119,32 @@ public class Main {
              }).start();
 
 
+              
+        /**********************************
+              Running Multiple Threads
+        **********************************/
 
+        Runnable task = () -> {
+        
+            for (int i = 1; i <= 5; i++) {
+        
+                System.out.println(
+                    Thread.currentThread().getName()
+                    + " : " + i
+                );
+            }
+        };
+        
+        Thread t1 = new Thread(task, "Worker-1");
+        Thread t2 = new Thread(task, "Worker-2");
+        
+        t1.start();
+        t2.start();
 
-
+        
+        /**********************************
+              Running Multiple Threads
+        **********************************/
 
         
     }
