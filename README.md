@@ -48,9 +48,32 @@ Pick ONE option:
 
 [✅] A pattern cannot be predicted and can vary each time the program is run.
  
+******************************************************************
+5. Given the follow code, which are true? (Choose all that apply):
+<img width="573" height="270" alt="image" src="https://github.com/user-attachments/assets/b86b23d9-9973-4881-8b4a-8541a46338a1" />
+ Pick ONE option:
 
+Compilation succeeds.✅
 
+Compilation fails due to an error on line 2.
 
+Compilation fails due to an error on line 4.
+
+Compilation fails due to an error on line 6.
+
+Compilation fails due to an error on line 7.
+
+******************************************************************
+6. What is a covariant return type?
+ Pick ONE option:
+
+The overriding method can have derived type as the return type instead of the base type  ✅
+
+The overriding method can have base type as the return type instead of the derived type  
+
+The return type is of the class type Covariant  
+
+The return type is void
 
 
 
