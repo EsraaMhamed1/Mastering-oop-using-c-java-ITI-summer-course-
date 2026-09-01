@@ -81,9 +81,28 @@ public class Main {
 
                   
         /**********************************
-                  start() vs run()
+                Implementing Runnable
         **********************************/
 
+        class MyTask implements Runnable {
+
+            @Override
+            public void run() {
+                System.out.println("Task is running");
+            }
+        }
+        
+        // inside main : 
+        Runnable task = new MyTask();
+        
+        Thread t = new Thread(task);
+        
+        t.start();
+
+              
+        /**********************************
+                  start() vs run()
+        **********************************/
 
             
     }
