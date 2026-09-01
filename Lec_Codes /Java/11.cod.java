@@ -143,9 +143,18 @@ public class Main {
 
         
         /**********************************
-              Running Multiple Threads
+             Getting the Current Thread
         **********************************/
 
+        Thread current = Thread.currentThread();
+
+        System.out.println(current.getName());
+
+          
+        /**********************************
+             Getting the Current Thread
+        **********************************/
+ 
         
     }
     
