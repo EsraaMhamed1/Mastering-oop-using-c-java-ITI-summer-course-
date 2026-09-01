@@ -45,7 +45,7 @@ public class Main {
 
             
         /**********************************
-             2 ways to create Treads 
+             Extending the Thread Class
         **********************************/
 
          class MyThread extends Thread {
@@ -59,6 +59,31 @@ public class Main {
         MyThread t = new MyThread();
         t.start();
         
+            
+        /**********************************
+                  start() vs run()
+        **********************************/
+
+        class MyThread extends Thread {
+        
+            @Override
+            public void run() {
+                System.out.println(
+                    Thread.currentThread().getName()
+                );
+            }
+        }
+
+        // inside main:
+         MyThread t = new MyThread();
+        t.run();
+        t.start();
+
+                  
+        /**********************************
+                  start() vs run()
+        **********************************/
+
 
             
     }
