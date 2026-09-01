@@ -402,17 +402,15 @@ public class Main {
           /***********************************
                       parllel stream   
           ************************************/
-
-           long sum =
-                IntStream.rangeClosed(1, 10_000)
-                         .parallel()
-                         .map(x -> x * x)
-                         .asLongStream()
-                         .sum();
-
-          System.out.println("Sum = " + sum);
-
-        
+            long n = 100_000;
+            
+                    long sum =
+                            LongStream.rangeClosed(1, n)
+                                      .parallel()
+                                      .reduce(0L, Long::sum);
+            
+                    System.out.println("Sum = " + sum);
+                    
         /***********************************
                     files  
           ************************************/
