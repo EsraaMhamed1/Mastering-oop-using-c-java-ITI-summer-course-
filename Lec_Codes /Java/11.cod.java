@@ -31,6 +31,20 @@ public class Main {
         t1.start();
         t2.start();
 
+
+
+        /**********************************
+             2 ways to create Treads 
+        **********************************/
+        
+        // 1. Extend the Thread class
+        class MyThread extends Thread
+
+        // Implement the Runnable interface
+        class MyTask implements Runnable
+
+
+            
     }
     
 }
