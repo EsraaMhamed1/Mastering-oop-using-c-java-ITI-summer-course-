@@ -15,7 +15,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    
+
+
+        /**********************************
+                  create  Treads 
+        **********************************/
         Thread t1 = new Thread(() ->
             System.out.println("Thread 1")
         );
