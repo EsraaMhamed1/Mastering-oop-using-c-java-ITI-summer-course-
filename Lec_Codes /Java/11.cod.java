@@ -101,10 +101,36 @@ public class Main {
 
               
         /**********************************
-                  start() vs run()
+                Lambda Expressions
         **********************************/
+        class MyTask implements Runnable {
 
-            
+            @Override
+            public void run() {
+                System.out.println("Task is running");
+             }
+        }
+
+        // inside main : 
+        Runnable task = () -> {
+            System.out.println("Task is running");
+        };
+
+        Thread t = new Thread(task);
+
+        t.start();
+        
+        
+        new Thread(() -> {
+            System.out.println("Hello from Thread");
+             }).start();
+
+
+
+
+
+
+        
     }
     
 }
