@@ -84,9 +84,9 @@ C) continue ✅<br>
 D) pass<br>
 
 ********************************************************************
-8. What happens here ?
-         int x = 10;
-         double y = x;
+8. What happens here ?<br>
+         int x = 10; <br>
+         double y = x;<br>
    
 A) Compilation error<br>
 B) Explicit casting is required<br>
