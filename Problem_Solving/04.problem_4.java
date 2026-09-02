@@ -1,8 +1,8 @@
-/*
-Ceate two overloaded sum methods:
-One method receives an Integer[] and returns the sum of all numbers.
-Another method receives a String[] and concatenates all strings in the same order.
-*/
+// Problem : Encryption Decryption 
+/********************************************************************************
+Given an encrypted message, decrypt it by first expanding the repeated characters 
+and then reversing the order of the words.
+********************************************************************************/
 
 import java.io.*;
 import java.util.*;
