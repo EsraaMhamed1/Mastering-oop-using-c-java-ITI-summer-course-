@@ -1,8 +1,8 @@
-/*
-Write a method that checks whether every opening bracket { or ( has a matching closing bracket } or ) in the correct order.
-Return "true" if the string is balanced, otherwise return "false".
-*/
+// Problem : Braces
+/* Write a method that checks whether every opening bracket { or ( has a matching closing bracket } or ) in the correct order.
+Return "true" if the string is balanced, otherwise return "false".*/
 
+// Solution : 
 import java.util.*;
 
 class Parser {
