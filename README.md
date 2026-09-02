@@ -75,6 +75,21 @@ The return type is of the class type Covariant
 
 The return type is void
 
+*******************************************************************
+7. Which keyword skips the current iteration of a loop?
 
+A) break
+B) skip
+C) continue ✅
+D) pass
 
-
+********************************************************************
+8. What happens here ?
+         int x = 10;
+         double y = x;
+   
+A) Compilation error
+B) Explicit casting is required
+C) Valid conversion ✅
+D) Runtime error
+   
