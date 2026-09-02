@@ -78,18 +78,18 @@ The return type is void
 *******************************************************************
 7. Which keyword skips the current iteration of a loop?
 
-A) break
-B) skip
-C) continue ✅
-D) pass
+A) break<br>
+B) skip<br>
+C) continue<br> ✅
+D) pass<br>
 
 ********************************************************************
 8. What happens here ?
          int x = 10;
          double y = x;
    
-A) Compilation error
-B) Explicit casting is required
-C) Valid conversion ✅
-D) Runtime error
+A) Compilation error<br>
+B) Explicit casting is required<br>
+C) Valid conversion ✅<br>
+D) Runtime error<br>
    
