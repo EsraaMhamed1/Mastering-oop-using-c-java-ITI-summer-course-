@@ -228,6 +228,37 @@ public class Main {
         worker.start();
 
         System.out.println("Main: Worker finished!");
+
+
+        /**********************************
+                  Digital Clock 
+        **********************************/
+
+        class ClockTask implements Runnable {
+
+            @Override
+            public void run() {
+        
+                while (true) {
+        
+                    System.out.println(
+                        java.time.LocalTime.now()
+                    );
+        
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        break;
+                    }
+                }
+            }
+        }
+        // inside main : 
+         Thread clock =
+            new Thread(new ClockTask(), "Clock");
+
+        clock.start();
         
    }
     
