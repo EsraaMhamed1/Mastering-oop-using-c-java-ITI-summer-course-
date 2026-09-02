@@ -80,7 +80,7 @@ The return type is void
 
 A) break<br>
 B) skip<br>
-C) continue<br> ✅
+C) continue ✅<br> 
 D) pass<br>
 
 ********************************************************************
