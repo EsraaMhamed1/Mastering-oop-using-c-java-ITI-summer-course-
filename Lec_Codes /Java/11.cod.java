@@ -259,7 +259,47 @@ public class Main {
             new Thread(new ClockTask(), "Clock");
 
         clock.start();
+
+
+        /**********************************
+                  Digital Clock 
+        **********************************/
+         class DateTimeApp extends JFrame
+         implements Runnable {
         
+            private Thread thread;
+        
+            public DateTimeApp() {
+        
+                setTitle(new Date().toString());
+        
+                thread = new Thread(this);
+                thread.start();
+            }
+        
+            @Override
+            public void run() {
+        
+                while (true) {
+        
+                    setTitle(new Date().toString());
+        
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        break;
+                    }
+                }
+            }
+         }
+    // inside main : 
+        DateTimeApp app = new DateTimeApp();
+
+        app.setBounds(500, 200, 500, 300);
+        app.setVisible(true);
+        app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
    }
     
 }
