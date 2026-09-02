@@ -1,4 +1,4 @@
-// problem 1 : 
+// problem 1 : Multi Sum 
 /**************************************************************************************************
 Create an Arithmetic class with a sum method that calculates the sum of an Integer[] array. 
 Overload the sum method to accept a String[] array and concatenate all the string elements in order.
