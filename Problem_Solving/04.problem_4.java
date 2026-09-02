@@ -4,63 +4,40 @@ Given an encrypted message, decrypt it by first expanding the repeated character
 and then reversing the order of the words.
 ********************************************************************************/
 
-import java.io.*;
-import java.util.*;
+public static String decryptMessage(String encryptedMessage) {
 
-class Arithmetic {
+    String[] words = encryptedMessage.split(" ");
+    StringBuilder result = new StringBuilder();
 
-    public Integer sum(Integer[] ints) {
-        int total = 0;
-        for (Integer num : ints) {
-            total += num;
-        }
-        return total;
-    }
+    for (int i = words.length - 1; i >= 0; i--) {
 
-    public String sum(String[] strings) {
-        StringBuilder sb = new StringBuilder();
-        for (String str : strings) {
-            sb.append(str);
-        }
-        return sb.toString();
-    }
-}
+        String word = words[i];
+        StringBuilder decoded = new StringBuilder();
 
-public class Solution {
+        for (int j = 0; j < word.length(); j++) {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        if (!sc.hasNext()) {
-            sc.close();
-            return;
-        }
+            char ch = word.charAt(j);
 
-        String input = sc.nextLine().trim();
-        if (input.isEmpty()) {
-            sc.close();
-            return;
-        }
+            if (j + 1 < word.length() && Character.isDigit(word.charAt(j + 1))) {
 
-        String[] parts = input.split("\\s+");
-        Arithmetic arithmetic = new Arithmetic();
+                int count = word.charAt(j + 1) - '0';
 
-        boolean isNumeric = true;
-        try {
-            Integer.parseInt(parts[0]);
-        } catch (NumberFormatException e) {
-            isNumeric = false;
-        }
+                for (int k = 0; k < count; k++) {
+                    decoded.append(ch);
+                }
 
-        if (isNumeric) {
-            Integer[] ints = new Integer[parts.length];
-            for (int i = 0; i < parts.length; i++) {
-                ints[i] = Integer.parseInt(parts[i]);
+                j++; // skip the digit
+            } else {
+                decoded.append(ch);
             }
-            System.out.println(arithmetic.sum(ints));
-        } else {
-            System.out.println(arithmetic.sum(parts));
         }
 
-        sc.close();
+        result.append(decoded);
+
+        if (i > 0) {
+            result.append(" ");
+        }
     }
+
+    return result.toString();
 }
